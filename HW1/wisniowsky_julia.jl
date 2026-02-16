@@ -360,7 +360,7 @@ function wisric_moid(saxisA, eccenA, argpeA, omegaA, incliA, saxisB, eccenB, arg
     end
 
     # END OF PARALLEL TUNING
-    return sqrt(moid) # we dealed with squares
+    return sqrt(moid), longit_m, trueB_m # we dealed with squares
 end
 
 
@@ -387,7 +387,7 @@ function water_procedure(nmax, argpeB, sintmpo, costmpo, sint, cost, tmptrueB, t
 end
 
 
-au = 1.4968e8
+au = 149597870
 rad = pi / 180
 
 earth_kep = [
@@ -423,7 +423,7 @@ atlas_kep = [
 ]
 
 # saxisA, eccenA, argpeA, omegaA, incliA
-println("MOID Earth-Apophis: ", wisric_moid(earth_kep...,apophis_kep...), " au")
-println("MOID Earth-Yr4: ", wisric_moid(earth_kep...,yr4_kep...), " au")
-println("MOID Apophis-Yr4: ", wisric_moid(apophis_kep...,yr4_kep...), " au")
-println("MOID Earth-Atlas: ", wisric_moid(earth_kep...,atlas_kep...), " au")
+println("MOID Earth-Apophis: ", wisric_moid(earth_kep...,apophis_kep...), " (dist (au), ta1 (rad), ta2 (rad)")
+println("MOID Earth-Yr4: ", wisric_moid(earth_kep...,yr4_kep...), " (dist (au), ta1 (rad), ta2 (rad)")
+println("MOID Apophis-Yr4: ", wisric_moid(apophis_kep...,yr4_kep...), " (dist (au), ta1 (rad), ta2 (rad)")
+println("MOID Earth-Atlas: ", wisric_moid(earth_kep...,atlas_kep...), " (dist (au), ta1 (rad), ta2 (rad)")
